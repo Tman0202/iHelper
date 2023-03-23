@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TaskRabbit Clone</title>
+    <link rel="stylesheet" type="text/css" href="static/styles/style.css">
+    
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#"><strong>iHelper</strong></a></li> 
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">About Us</a></li>
+        </ul>
+      </nav>
+      <div class="cta">
+        <a href="#" class="button">Sign Up</a>
+        <a href="#" class="button">Log In</a>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <h3>Find trusted and affordable local service</h3>
+        <section class="filters">
+    <div class="locations">
+      <h3>select your location</h3>
+      <h4>&nbsp;</h4>
+      <div class="popover">
+      {% for state in states.values()|sort(attribute='name') %}
+        <ul>
+          <li>
+            <h2>{{ state.name }}</h2>
+            {% for city in state.places|sort(attribute='name') %}
+                <ul>
+                <li><div class="list_content">{{ city.name }}</div></li>
+                </ul>
+          {% endfor %}
+          </li>
+        </ul>
+      {% endfor %}
+      </div>
+    </div>
+    <div class="amenities">
+      <h3>select service or task</h3>
+      <h4>&nbsp;</h4>
+      <div class="popover">
+        {% for amenity in amenities.values()|sort(attribute='name') %}
+        <ul>
+          <li><div class="list_content">{{ amenity.name }}</div></li>
+        </ul>
+      {% endfor %}
+        </div>
+    </div>
+    <button type="button">Search</button>
+        </section>
+      </div>
+    </main>
+    <footer>
+      <p>&copy; 2023 iHelper</p>
+    </footer>
+  </body>
+</html>
