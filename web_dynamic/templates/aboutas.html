@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>iHelper - Price</title>
+    <link rel="stylesheet" type="text/css" href="static/styles/style.css?{{ cache_id }}">
+  
+  <style>
+    header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: rgb(13, 70, 21);
+  font-size: 24px;
+  
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #beb3b3;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+nav ul li:first-child a {
+  font-size: 35px !important;
+
+}
+
+.cta {
+  display: flex;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* Global styles */
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #333;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  margin-top: 0;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header styles */
+
+header {
+  background-color: rgb(13, 70, 21);;
+  color: #fff;
+  padding: 10px 0;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav li:last-child {
+  margin-right: 0;
+}
+
+nav a {
+  color: #fff;
+  padding: 10px;
+}
+
+nav a:hover {
+  background-color: #0069d9;
+}
+
+/* Main styles */
+
+.results {
+  margin-top: 20px;
+}
+
+.results ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.results li {
+  margin-bottom: 10px;
+}
+
+/* Footer styles */
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #f5f5f5;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+  padding: 10px;
+}
+
+@media screen and (max-width: 767px) {
+  nav {
+    display: none;
+  }
+  
+  header h1 {
+    text-align: center;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Add styles only for main tag */
+main {
+  margin: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+  </style>
+
+<script>
+  function showAlert() {
+  // create alert div element
+  const alert = document.createElement('div');
+  alert.classList.add('alert');
+  alert.textContent = 'Your tasks are booked successfully. Thank you for choosing us!';
+
+  // append alert to body
+  document.body.appendChild(alert);
+
+  // remove alert after 3 seconds
+  setTimeout(() => {
+    alert.remove();
+  }, 3000);
+
+}
+</script>
+
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#"><strong>iHelper</strong></a></li> 
+          <li><a href="http://127.0.0.1:5000/iHelper">Home</a></li>
+          <li><a href="http://127.0.0.1:5000/iHelper/service">Services</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="http://127.0.0.1:5000/iHelper/about_us">About Us</a></li>
+        </ul>
+      </nav>
+      <div class="cta">
+        <!-- <a href="http://127.0.0.1:5000/iHelper/signup" class="button">Sign Up</a>
+        <a href="http://127.0.0.1:5000/iHelper/signin" class="button">Log In</a> -->
+      </div>
+    </header>
+    <main class="main-section">
+        <div class="container">
+            <h1>About Us</h1>
+            <p>iHelper is a leading provider of home and office services. Our mission is to make your life easier by providing high-quality services that are reliable, affordable, and convenient. We pride ourselves on our commitment to customer satisfaction and our team of experienced professionals who are dedicated to getting the job done right.</p>
+            <h2>Our Services</h2>
+            <ul>
+              <li>Babysitting/Maid</li>
+              <li>Cleaning</li>
+              <li>Electrician</li>
+              <li>Gardening</li>
+              <li>Plumbing</li>
+              <li>Security</li>
+            </ul>
+            <h2>Our Team</h2>
+            <p>Our team consists of experienced professionals who are passionate about their work and committed to providing the highest level of service. We carefully screen and train all of our employees to ensure that they have the skills and expertise needed to get the job done right. We also invest in the latest technology and equipment to ensure that our services are efficient and effective.</p>
+            <h2>Contact Us</h2>
+            <p>If you have any questions or would like to learn more about our services, please don't hesitate to contact us. Our friendly and knowledgeable customer service team is always here to help.</p>
+            <ul>
+              <li>Email: tomasmandefro@gmail.com</li>
+              <li>Phone: +2519922477450</li>
+              <li>Address: Addis Ababa Ethiopia</li>
+            </ul>
+          </div>
+
+     
+
+    </main>
+    <footer>
+      <!-- footer content here -->
+      <p>&copy; 2023 iHelper. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

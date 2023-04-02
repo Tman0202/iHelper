@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iHelper</title>
+    <link rel="stylesheet" type="text/css" href="static/styles/style.css?{{ cache_id }}">
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="../static/scripts/1-hbnb.js?{{ cache_id }}"></script> -->
+<style>
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 24px;
+}
+.box {
+  background-color: blue;
+}
+
+#main-title {
+  font-size: 36px;
+}
+
+
+
+
+
+/* General styling */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f1f1f1;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 40px;
+  margin-top: 50px;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+input[type="email"],
+input[type="password"] {
+  background-color: #f1f1f1;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 14px;
+  width: 100%;
+}
+
+button[type="submit"] {
+  background-color: #0077cc;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 10px;
+  margin-top: -100px;
+  transition: all 0.2s ease-in-out;
+  transform: translateX(-50px);
+ 
+}
+
+button[type="submit"]:hover {
+  background-color: #005c99;
+}
+p {
+  font-size: 14px;
+  text-align: center;
+}
+
+a {
+  color: #0077cc;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+  color: #484848;
+  font-size: 14px;
+  font-family: Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* .container {
+  max-width: 1000px;
+  margin: 30px auto;
+} */
+
+/* Filters section */
+.filters {
+  position: relative;
+  background: rgb(201, 201, 204);
+  height: 70px;
+  width: 100%;
+  border: 1px solid #dddddd;
+  border-radius: 20px;
+  margin-top: 110px;
+}
+
+button {
+  position: absolute;
+  top: 100%;
+  right: 500px;
+  font-size: 18px;
+  background: #161515;
+  color: #dfecc8;
+  height: 48px;
+  width: 20%;
+  border-style: none;
+  border-radius: 10px;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.filters div {
+  display: inline-grid;
+}
+
+.filters h2,
+.filters h3 {
+  margin-left: 15%;
+  margin-bottom: 0;
+  font-weight: 600;
+}
+
+.filters h4 {
+  margin-left: 15%;
+  margin-top: 0;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+/* Locations section */
+.locations {
+  height: 100%;
+  width: 40%;
+  border-right: 1px solid #dddddd;
+}
+
+.locations h3 {
+  margin-top: 25px;
+  font-weight: 600;
+}
+
+.locations .popover {
+  visibility: hidden;
+  width: 100%;
+  height: 300px;
+  max-height: 300px;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  background: #fafafa;
+  padding-bottom: 25px;
+  overflow-y: scroll;
+}
+
+.locations .list_content {
+  padding-left: 60px;
+  padding-top: 10px;
+}
+
+.locations .popover ul {
+  list-style-type: none;
+}
+
+.locations:hover .popover {
+  visibility: visible;
+}
+
+/* Amenities section */
+.amenities {
+  height: 100%;
+  width: 25%;
+}
+
+.amenities h3 {
+  margin-top: 0;
+  font-weight: 600;
+}
+
+.amenities .popover {
+  visibility: hidden;
+  padding: 20px 0;
+  margin-left: -5px;
+  margin-top: 0%;
+}
+
+.amenities .list_content {
+  padding-left: 30px;
+  padding-top: 10px;
+}
+
+.amenities .popover ul {
+  list-style-type: none;
+}
+
+.amenities:hover .popover {
+  visibility: visible;
+}
+
+/* Navigation and CTA */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 0px;
+  background-color: rgb(13, 70, 21);
+  font-size: 24px;
+  
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #beb3b3;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+nav ul li:first-child a {
+  font-size: 35px !important;
+
+}
+
+.cta {
+  display: flex;
+}
+
+.button {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 10px 20px;
+  background-color: #363434;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #f5f5f5;
+  text-align: center;
+}
+
+.container h3 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+
+
+<head>
+  
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#"><strong>iHelper</strong></a></li> 
+          <li><a href="http://127.0.0.1:5000/iHelper">Home</a></li>
+          <li><a href="http://127.0.0.1:5000/iHelper/service">Services</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="http://127.0.0.1:5000/iHelper/about_us">About Us</a></li>
+        </ul>
+      </nav>
+      <div class="cta">
+        <a href="http://127.0.0.1:5000/iHelper/signup" class="button">Sign Up</a>
+        <a href="http://127.0.0.1:5000/iHelper/signin" class="button">Log In</a>
+      </div>
+    </header>
+    <div class="container">
+      <form action="#" method="POST">
+        <h2>Sign In to iHelper</h2>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit" class="btn">Sign In</button>
+      </form>
+      <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+    </div>
+  </body>
+  <footer>
+    <p>&copy; 2023 iHelper</p>
+  </footer>
+</html>

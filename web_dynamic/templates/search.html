@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>iHelper - Search Results</title>
+    <link rel="stylesheet" type="text/css" href="static/styles/style.css?{{ cache_id }}">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="../static/scripts/search.js?{{ cache_id }}"></script>
+  <style>
+
+    
+  
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: rgb(13, 70, 21);
+  font-size: 24px;
+  
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #beb3b3;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+nav ul li:first-child a {
+  font-size: 35px !important;
+
+}
+
+.cta {
+  display: flex;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* Global styles */
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #333;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  margin-top: 0;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header styles */
+
+header {
+  background-color: rgb(13, 70, 21);;
+  color: #fff;
+  padding: 10px 0;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav li:last-child {
+  margin-right: 0;
+}
+
+nav a {
+  color: #fff;
+  padding: 10px;
+}
+
+nav a:hover {
+  background-color: #0069d9;
+}
+
+/* Main styles */
+
+.results {
+  margin-top: 20px;
+}
+
+.results ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.results li {
+  margin-bottom: 10px;
+}
+
+/* Footer styles */
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #f5f5f5;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+  padding: 10px;
+}
+
+@media screen and (max-width: 767px) {
+  nav {
+    display: none;
+  }
+  
+  header h1 {
+    text-align: center;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Main section styles */
+
+.main-section {
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+.main-section h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.main-section form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-section label {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.main-section input[type="datetime-local"],
+.main-section textarea {
+  width: 60%;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.main-section input[type="radio"] {
+  margin-right: 10px;
+}
+
+.main-section .button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.main-section .button:hover {
+  background-color: #0069d9;
+}
+
+
+
+
+
+
+
+
+h3 {
+        font-size: 20px;
+        font-weight: bold;
+        margin: 20px 0;
+        padding: 10px;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        background-color: #f5f5f5;
+        text-align: center;
+    }
+.button {
+  margin-top: 20px;
+}
+
+
+/* div {
+    display: inline-block;
+    margin-right: 10px;
+  } */
+
+
+
+
+</style>
+
+</head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#"><strong>iHelper</strong></a></li> 
+          <li><a href="http://127.0.0.1:5000/iHelper">Home</a></li>
+          <li><a href="http://127.0.0.1:5000/iHelper/service">Services</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="http://127.0.0.1:5000/iHelper/about_us">About Us</a></li>
+        </ul>
+      </nav>
+      <div class="cta">
+        <!-- <a href="http://127.0.0.1:5000/iHelper/signup" class="button">Sign Up</a>
+        <a href="http://127.0.0.1:5000/iHelper/signin" class="button">Log In</a> -->
+      </div>
+    </header>
+    <main class="main-section">
+      <!-- <h3>your location "{{ city }}"  selected service "{{ amenities|join(", ") }}"</h3> -->
+<form method="get" action="/iHelper/price">
+  <h3>your location "{{ city }}"  selected service "{{ amenities|join(", ") }}"</h3>
+  <!-- <form method="post" action="/iHelper/submit"> -->
+   
+    <label for="appointment">Select appointment date and time:</label>
+  <input type="datetime-local" name="appointment" id="appointment" value="2023-03-28T16:00">
+  
+    <label for="task">Tell us the details of your task:</label>
+    <textarea name="task" id="task"></textarea>
+    <label for="task-size">Select task size:</label>
+    <div>
+      <input type="radio" name="task-size" value="small" style="margin-top: 5px;"> Small - Est. 1 hr<br>
+      <input type="radio" name="task-size" value="medium" style="margin-top: 5px;"> Medium - Est. 2-3 hrs<br>
+      <input type="radio" name="task-size" value="large" style="margin-top: 5px;"> Large - Est. 4+ hrs<br>
+    </div>
+
+    <input type="hidden" name="amenities" value="{{ amenities|join(',') }}">
+    <input type="hidden" name="city" value="{{ city }}">
+
+   <button  type="submit" class="button" id="get-price-button">Get Price</button>
+
+</form> 
+    </main>
+    <footer>
+      <!-- footer content here -->
+      <p>&copy; 2023 iHelper. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

@@ -12,15 +12,15 @@
       <nav>
         <ul>
           <li><a href="#"><strong>iHelper</strong></a></li> 
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Services</a></li>
+          <li><a href="http://127.0.0.1:5000/iHelper">Home</a></li>
+          <li><a href="http://127.0.0.1:5000/iHelper/service">Services</a></li>
           <li><a href="#">Pricing</a></li>
-          <li><a href="#">About Us</a></li>
+          <li><a href="http://127.0.0.1:5000/iHelper/about_us">About Us</a></li>
         </ul>
       </nav>
       <div class="cta">
-        <a href="#" class="button">Sign Up</a>
-        <a href="#" class="button">Log In</a>
+        <a href="http://127.0.0.1:5000/iHelper/signup" class="button">Sign Up</a>
+        <a href="http://127.0.0.1:5000/iHelper/signin" class="button">Log In</a>
       </div>
     </header>
     <main>
@@ -29,20 +29,25 @@
         <section class="filters">
     <div class="locations">
       <h3>select your location</h3>
-      <h4>&nbsp;</h4>
-      <div class="popover">
-      {% for state in states.values()|sort(attribute='name') %}
-        <ul >
-          <li>
-            <h2>{{ state.name }}</h2>
-            {% for city in state.places|sort(attribute='name') %}
-                <ul >
-                <li style="margin-bottom: 10px;"><div class="list_content">{{ city.name }}</div></li>
-                </ul>
-          {% endfor %}
-          </li>
-        </ul>
-      {% endfor %}
+      <h4 id="selected-city">&nbsp;</h4>
+      <div class="popover" id="cities-popover">
+        {% for state in states.values()|sort(attribute='name') %}
+    <ul >
+      <li>
+        <h2>{{ state.name }}</h2>
+        {% for city in state.places|sort(attribute='name') %}
+            <ul >
+            <li style="margin-bottom: 10px;">
+              <label>
+                <input type="radio" name="city" value="{{ city.name }}" class="list_content" id="{{ state.name }}-{{ city.name }}" {% if loop.first %}checked{% endif %}>
+                <div class="list_content">{{ city.name }}</div>
+              </label>
+            </li>
+            </ul>
+        {% endfor %}
+      </li>
+    </ul>
+  {% endfor %}
       </div>
     </div>
     <div class="amenities">
@@ -59,7 +64,7 @@
         </ul>
       </div>
     </div>
-    <button type="button">Search</button>
+    <button type="button" id="search-btn" onclick="search()">Search</button>
         </section>
       </div>
     </main>
@@ -67,4 +72,4 @@
       <p>&copy; 2023 iHelper</p>
     </footer>
   </body>
-</html>
+</html>  

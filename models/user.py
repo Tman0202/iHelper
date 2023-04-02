@@ -20,7 +20,6 @@ class User(MainModel, Base):
     first_name = Column(String(128), nullable=True)
     last_name = Column(String(128), nullable=True)
     phone_number = Column(String(128), nullable=False)
-    user_name = Column(String(30), nullable=False)
     
     reviews = relationship('Review', cascade='all, delete', backref='user')
     # services = relationship('Service', cascade='all, delete', backref='user')
